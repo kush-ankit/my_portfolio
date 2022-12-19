@@ -2,7 +2,7 @@ import React from 'react'
 
 function Experties() {
     return (
-        <div className='h-screen w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-200 via-gray-400 to-gray-600 flex flex-col justify-between items-center'>
+        <div className='h-screen w-full flex flex-col justify-between items-center bg-slate-300 bg-opacity-20'>
             <div className='h-2/3 max-w-screen-lg '>
                 <h1 className='text-5xl underline m-5'>Experties</h1>
                 <div className='grid grid-rows-2 grid-flow-col gap-20'>

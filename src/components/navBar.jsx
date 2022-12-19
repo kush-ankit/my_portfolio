@@ -21,7 +21,8 @@ const NavBar = () => {
         },
         {
             id: 4,
-            link: "Resume"
+            link: "Resume",
+            href: '/resume.pdf'
         },
     ]
     const [isClicked, changeColor] = useState(true)
@@ -29,7 +30,7 @@ const NavBar = () => {
     const styles = {
 
         change: {
-            backgroundColor: isClicked ? "#ccc" : "",
+            backgroundColor: isClicked ? "#536976" : "",
 
 
         }
@@ -47,17 +48,17 @@ const NavBar = () => {
 
 
     return (
-        <div style={styles.change} id='change' className="flex flex-row justify-between p-5 fixed w-full items-center bg-opacity-30 ">
+        <div style={styles.change} id='change' className="flex flex-row justify-between p-4 fixed w-full items-center bg-opacity-30 ">
 
-            <div className="text-5xl text-gray-700 font-bold font-Caveat underline underline-offset-4 mx-3">
+            <div className="text-5xl text-gray-200 font-bold font-Caveat underline underline-offset-4 mx-3">
                 Ankit
             </div>
-            <ul className="hidden text-gray-700 md:flex flex-row justify-between   ">
+            <ul className="hidden text-gray-200 md:flex flex-row justify-between   ">
                 {
-                    links.map(({ id, link }) => (
-                        <li key={id} className="px-5 cursor-pointer ">
+                    links.map(({ id, link, href }) => (
+                        <a href={href} target="_blank" rel="noopener noreferrer" key={id} className="px-5 cursor-pointer ">
                             {link}
-                        </li>
+                        </a>
                     ))
                 }
             </ul>
@@ -67,10 +68,10 @@ const NavBar = () => {
             {Nav && (
                 <ul className=" flex flex-col justify-center items-center absolute top-0 left-0 text-4xl p-3 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
                     {
-                        links.map(({ id, link }) => (
-                            <li key={id} className="px-4 py-6 cursor-pointer ">
+                        links.map(({ id, link , href }) => (
+                            <a href={href} target="_blank" rel="noopener noreferrer" key={id} className="px-4 py-6 cursor-pointer ">
                                 {link}
-                            </li>
+                            </a>
                         ))
 
                     }
