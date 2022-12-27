@@ -1,5 +1,6 @@
 import About from "./components/About";
-import Experties from "./components/Experties";
+import Contact from "./components/Contact";
+import Experience from "./components/Experience";
 import Home from "./components/Home";
 import NavBar from "./components/navBar";
 import Project from "./components/Project";
@@ -7,13 +8,14 @@ import SocialLinks from "./components/SocialLinks";
 
 function App() {
   return (
-    <div className="bg-gradient-to-r from-[#5f2c82] to-[#49a09d]">
+    <div className="bg-[#b6c199] bg-opacity-60 text-black md:text-white md:bg-gradient-to-br from-[#abd699] to-[#49a09d] ">
       <NavBar />
       <SocialLinks />
       <Home />
       <About />
-      <Experties />
+      <Experience />
       <Project/>
+      <Contact/>
     </div>
   );
 }

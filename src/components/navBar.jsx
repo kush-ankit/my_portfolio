@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { Link } from 'react-scroll';
 
 
 
@@ -9,30 +10,38 @@ const NavBar = () => {
     const links = [
         {
             id: 1,
-            link: "Home"
+            link: "Home",
+            goto:"Home"
         },
         {
             id: 2,
-            link: "About"
+            link: "About",
+            goto:"About"
         },
         {
             id: 3,
-            link: "portfolio"
+            link: "Experience",
+            goto:"Experience"
+           
         },
         {
             id: 4,
-            link: "Resume",
-            href: '/resume.pdf'
+            link: "Project",
+            goto:"Project"
         },
+        {
+            id: 5,
+            link: "Contact",
+            goto:"Contact",
+        }
     ]
     const [isClicked, changeColor] = useState(true)
 
     const styles = {
 
         change: {
-            backgroundColor: isClicked ? "#536976" : "",
-
-
+            backgroundColor: isClicked ? "#c29591" : ""
+            
         }
     }
 
@@ -48,30 +57,30 @@ const NavBar = () => {
 
 
     return (
-        <div style={styles.change} id='change' className="flex flex-row justify-between p-4 fixed w-full items-center bg-opacity-30 ">
+        <div style={styles.change} id='change' className="flex flex-row justify-between p-3 md:p-4 fixed w-full items-center bg-opacity-30 ">
 
-            <div className="text-5xl text-gray-200 font-bold font-Caveat underline underline-offset-4 mx-3">
+            <div className="text-5xl font-bold font-Caveat underline underline-offset-4 px-3">
                 Ankit
             </div>
-            <ul className="hidden text-gray-200 md:flex flex-row justify-between   ">
+            <ul className="hidden md:flex flex-row justify-between   ">
                 {
-                    links.map(({ id, link, href }) => (
-                        <a href={href} target="_blank" rel="noopener noreferrer" key={id} className="px-5 cursor-pointer ">
-                            {link}
-                        </a>
+                    links.map(({ id, link,href,goto}) => (
+                        <li target="_blank" rel="noreferrer" key={id} className="px-5 cursor-pointer ">
+                           <Link to={goto} smooth duration={500}>{link}</Link>
+                        </li>
                     ))
                 }
             </ul>
-            <div onClick={() => setNav(!Nav)} className='md:hidden cursor-pointer pr-4 z-10 text-gray-400 '>
+            <div onClick={() => setNav(!Nav)} className='md:hidden cursor-pointer pr-4 z-10 '>
                 {Nav ? <FaTimes size={30} /> : <FaBars size={30} />}
             </div>
-            {Nav && (
-                <ul className=" flex flex-col justify-center items-center absolute top-0 left-0 text-4xl p-3 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
+            {Nav && (          
+                <ul className=" flex flex-col justify-center items-center absolute top-0 left-0 text-4xl m-5 w-4/5 h-fit center bg-gradient-to-b from-white to-[#b6c199] rounded-xl">
                     {
-                        links.map(({ id, link , href }) => (
-                            <a href={href} target="_blank" rel="noopener noreferrer" key={id} className="px-4 py-6 cursor-pointer ">
-                                {link}
-                            </a>
+                        links.map(({ id, link }) => (
+                            <li target="_blank" rel="noopener noreferrer" key={id} className="px-4 py-6 cursor-pointer ">
+                                <Link onClick={()=> setNav(!Nav)} to={link} smooth duration={500}>{link}</Link>
+                            </li>
                         ))
 
                     }
