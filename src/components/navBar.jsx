@@ -64,7 +64,7 @@ const NavBar = () => {
             </div>
             <ul className="hidden md:flex flex-row justify-between   ">
                 {
-                    links.map(({ id, link,href,goto}) => (
+                    links.map(({ id, link,goto}) => (
                         <li target="_blank" rel="noreferrer" key={id} className="px-5 cursor-pointer ">
                            <Link to={goto} smooth duration={500}>{link}</Link>
                         </li>
@@ -77,9 +77,9 @@ const NavBar = () => {
             {Nav && (          
                 <ul className=" flex flex-col justify-center items-center absolute top-0 left-0 text-4xl m-5 w-4/5 h-fit center bg-gradient-to-b from-white to-[#b6c199] rounded-xl">
                     {
-                        links.map(({ id, link }) => (
+                        links.map(({ id, link,goto }) => (
                             <li target="_blank" rel="noopener noreferrer" key={id} className="px-4 py-6 cursor-pointer ">
-                                <Link onClick={()=> setNav(!Nav)} to={link} smooth duration={500}>{link}</Link>
+                                <Link onClick={()=> setNav(!Nav)} to={goto} smooth duration={500}>{link}</Link>
                             </li>
                         ))
 

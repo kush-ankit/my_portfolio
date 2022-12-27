@@ -11,7 +11,7 @@ function SocialLinks() {
                     LinkedIn <BsLinkedin size={30} />
                 </>
             ),
-            href: 'http://www.linkedin.com',
+            href: 'https://www.linkedin.com/in/ankit-kushwaha-135817227',
             style: 'rounded-tr-md',
             download: false,
         },
@@ -60,7 +60,7 @@ function SocialLinks() {
 
                 {socialLinks.map(({ id, child, href, style, download }) => (
                     <li key={id} className={"ml-[-100px] hover:ml-[-10px] hover:left-0 hover:rounded-r-md duration-300 flex justify-between items-center w-40 h-14 px-4 bg-gray-700 " + style}>
-                        <a href={href} className='flex flex-row justify-between items-center w-full text-gray-300' download={download} target="_blank" rel="noreferrer">
+                        <a href={href} className='flex flex-row justify-between items-center w-full text-gray-300' download={download} target="_blank" rel="noopener noreferrer">
                             {child}
                         </a>
                     </li>
