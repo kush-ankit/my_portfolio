@@ -8,7 +8,7 @@ import SocialLinks from "./components/SocialLinks";
 
 function App() {
   return (
-    <div className="bg-[#b6c199] bg-opacity-60 text-black md:text-white md:bg-gradient-to-br from-[#abd699] to-[#49a09d] ">
+    <div className="bg-[#b6c199] bg-opacity-60 text-black md:text-white md:bg-gradient-to-br from-[#abd699] to-[#49a09d] h-fit ">
       <NavBar />
       <SocialLinks />
       <Home />
@@ -16,6 +16,7 @@ function App() {
       <Experience />
       <Project/>
       <Contact/>
+
     </div>
   );
 }

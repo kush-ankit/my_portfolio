@@ -11,7 +11,7 @@ function SocialLinks() {
                     LinkedIn <BsLinkedin size={30} />
                 </>
             ),
-            href: 'http://www.linkedin.com',
+            href: 'https://www.linkedin.com/in/ankit-kushwaha-135817227',
             style: 'rounded-tr-md',
             download: false,
         },
