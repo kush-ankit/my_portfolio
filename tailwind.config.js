@@ -12,5 +12,6 @@ module.exports = {
       Caveat:["Caveat"],
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
+
